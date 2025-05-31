@@ -8,4 +8,26 @@
 
 С другой стороны, [туториал](https://www.youtube.com/watch?v=s_Fs4AXsTnA) для Module Federation сработал отлично, и мне даже удалось настроить встраивание микрофронтенда на solid-js в host на React (достаточно было предварительно его отрендерить). На этом этапе я решил, что Module Federation подоходит для использования.
 
-## 
+## Планирование изменений
+
+- Сначала я решил создать host, полностью дублирующий монолитный фронтенд, но при этом использующий webpack и позволяющий подключить к нему микрофронтенды
+- После этого я решил выделять микрофронтенды по одному: auth - для авторизации, photos - для просмотра/загрузки фотографий и лайков, profile - для редактирования и отображения профиля
+
+Компоненты, которые должны быть в auth:
+- [Login](frontend/src/components/Login.js)
+- [InfoTooltip](frontend/src/components/InfoTooltip.js)
+- [Register](frontend/src/components/Register.js)
+- [InfoTooltip](frontend/src/components/InfoTooltip.js)
+Компоненты, которые должны быть в photos:
+- [Card](frontend/src/components/Card.js)
+- [PopupWithForm](frontend/src/components/PopupWithForm.js)
+- [ImagePopup](frontend/src/components/ImagePopup.js)
+В profile:
+- [ImagePopup](frontend/src/components/ImagePopup.js)
+- [EditAvatarPopup](frontend/src/components/EditAvatarPopup.js)
+- [EditProfilePopup](frontend/src/components/EditProfilePopup.js)
+
+Я наметил, какие функции api нужны каждому из микрофронтендов (перенёс auth.json в auth, но до остальных добраться не успел).
+Основная сложность - информация о том, вошёл ли пользователь в систему, и если да, то под кем, нужна другим микрофронтедам. Для этого я решил использовать глобальное состояние с помощью Redux.   
+
+Я готов доделать эту работу на следующей неделе, сейчас отправил потому что подходит дедлайн, и надо отправить хотя бы что-то. Я начал проходить курс вчера утром.

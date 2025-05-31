@@ -50,7 +50,7 @@ module.exports = {
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        auth: "remote@http://localhost:8080/remoteEntry.js",
+        auth: "auth@http://localhost:8080/remoteEntry.js",
       },
       exposes: {},
       shared: {
