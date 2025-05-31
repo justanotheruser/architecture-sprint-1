@@ -1,3 +1,6 @@
+# !Ссылка на задание 2: https://drive.google.com/file/d/1JEJdcb7YJF1UsPOyq30Ha8y8ZKYAuX8T/view?usp=sharing
+
+
 # Разделение монолитного фронтенда на микрофронтенды
 
 ## Выбор технологии
